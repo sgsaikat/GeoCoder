@@ -41,7 +41,7 @@ def success():
                 if 'address' in dataset.columns or 'Address' in dataset.columns:
                     dataset.columns = ['Address' if column == 'address' else column for column in dataset.columns]
                     dataset = get_geocodes(dataset)
-                    dataset.to_csv(f"uploads/{file_name}")
+                    dataset.to_csv(f"uploads/{file_name}", index=None)
                     return render_template("index.html", success_data=dataset.to_html(),
                                             btn="download.html",
                                             file_name=f'GeoCodes of addresses in File: <strong>{file_name}</strong>')
