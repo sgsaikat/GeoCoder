@@ -80,4 +80,4 @@ def plot():
     return map.get_root().render()
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=False)
